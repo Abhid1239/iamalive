@@ -1,0 +1,253 @@
+.wrapper {
+	aspect-ratio: 1.618;
+	width: 100vmin;
+	display: flex;
+	/* background: #e0aaff; */
+	position: absolute;
+	border-radius: 20px;
+	position: relative;
+}
+@media (max-width: 550px) {
+	.wrapper {
+		transform: rotate(90deg);
+	}
+}
+
+/* background: #000  url('./images/background.jpeg') no-repeat;
+background-size: contain;
+background-position: center; */
+
+.children {
+	position: absolute;
+	height: 100%;
+	width: 20%;
+	top: 0;
+	left: 0;
+	background: #10002b;
+	border-radius: 50px;
+	transition: inset, border-radius, width, height, transform, background;
+	transition-duration: 750ms;
+	transition-timing-function: ease-in-out;
+	/* animation: rotate 1s  linear paused; */
+}
+[data-type='1'] .a {
+	/* background-color: #d7263d; */
+	width: 25%;
+}
+[data-type='1'] .b {
+	/* background-color: #02182b; */
+	left: 25%;
+	width: 10%;
+	height: 50%;
+	top: 50%;
+}
+[data-type='1'] .c {
+	/* background-color: #0197f6; */
+	left: 45%;
+	width: 15%;
+}
+[data-type='1'] .d {
+	/* background-color: #448fa3; */
+	left: 35%;
+	width: 10%;
+	height: 50%;
+	top: 25%;
+}
+[data-type='1'] .e {
+	/* background-color: #68c5db; */
+	left: 60%;
+	width: 20%;
+	height: 75%;
+}
+[data-type='1'] .f {
+	/* background-color: #b7990d; */
+	width: 10%;
+	height: 75%;
+	left: 80%;
+	top: 25%;
+}
+[data-type='1'] .g {
+	/* background-color: #ffd60a; */
+	left: 90%;
+	width: 5%;
+	height: 50%;
+	top: 50%;
+}
+
+[data-type='2'] .a {
+	/* background-color: #780000; */
+	width: 45%;
+}
+[data-type='2'] .b {
+	/* background-color: #fdf0d5; */
+	top: 50%;
+	width: 30%;
+	height: 50%;
+}
+[data-type='2'] .c {
+	/* background-color: #f4d35e; */
+	top: 50%;
+	left: 80%;
+	height: 50%;
+}
+[data-type='2'] .d {
+	/* background-color: #9381ff; */
+	left: 65%;
+	width: 35%;
+	height: 50%;
+}
+[data-type='2'] .e {
+	/* background-color: #00171f; */
+	left: 45%;
+	height: 50%;
+}
+[data-type='2'] .f {
+	/* background-color: #9fffcb; */
+	top: 50%;
+	width: 35%;
+	height: 50%;
+	left: 45%;
+}
+[data-type='2'] .g {
+	/* background-color: #fff; */
+	top: 0%;
+	left: 50%;
+	width: 15%;
+	border-radius: 100%;
+	height: calc(15% * 1.618);
+}
+
+[data-type='3'] .a {
+	/* background-color: #780000; */
+	width: 45%;
+	height: calc(45% * 1.618);
+}
+[data-type='3'] .b {
+	/* background-color: #fdf0d5; */
+	top: 50%;
+	width: 30%;
+	height: 50%;
+}
+[data-type='3'] .c {
+	/* background-color: #f4d35e; */
+	top: 50%;
+	left: 67%;
+	height: 50%;
+	width: calc(50% / 1.618);
+}
+[data-type='3'] .d {
+	/* background-color: #9381ff; */
+	left: 65%;
+	width: 35%;
+	height: 50%;
+	width: calc(50% / 1.618);
+}
+[data-type='3'] .e {
+	/* background-color: #00171f; */
+	left: 45%;
+	height: 50%;
+	width: calc(50% / 1.618);
+}
+[data-type='3'] .f {
+	/* background-color: #9fffcb; */
+	top: 50%;
+	width: calc(50% / 1.618);
+	height: 50%;
+	left: 33%;
+}
+[data-type='3'] .g {
+	/* background-color: #fff; */
+	top: 0%;
+	left: 50%;
+	width: 15%;
+	border-radius: 100%;
+	height: calc(15% * 1.618);
+}
+[data-type='3'] .children {
+	border-radius: 100%;
+}
+
+[data-type='3'][data-radius='2'] .children {
+	border-radius: 0px;
+}
+
+[data-type='3'][data-radius='3'] .children {
+	border-radius: 25%;
+}
+
+[data-type='1'][data-radius='2'] .children {
+	border-radius: 0px;
+}
+
+[data-type='1'][data-radius='3'] .children {
+	border-radius: 100px;
+}
+
+[data-type='2'][data-radius='2'] .children {
+	border-radius: 0px;
+}
+.a {
+	background: url(./images/asu.jpeg) no-repeat;
+}
+
+.b {
+	background: url(./images/bs.jpeg) no-repeat;
+}
+
+.c {
+	background: url(./images/cs.jpeg) no-repeat;
+}
+
+.d {
+	background: url(./images/ds.jpeg) no-repeat;
+}
+
+.e {
+	background: url(./images/es.jpeg) no-repeat;
+}
+
+.f {
+	background: url(./images/fs.jpeg) no-repeat;
+}
+
+.g {
+	background: url(./images/gs.jpeg) no-repeat;
+}
+
+.children {
+	background-position: center;
+	background-size: cover;
+}
+
+.children:hover {
+	transform: scale(1.5);
+	z-index: 2;
+}
+.hovered {
+	animation: rotate 0.5s linear forwards;
+
+	/* transform: scaleY(-1);
+	transition: transform 2s; */
+}
+
+.full-screen {
+	width: 100vw !important;
+	height: 100vh !important;
+	inset: 0 !important;
+	position: fixed !important;
+	z-index: 100 !important;
+	transform: scale(1) !important;
+	background-size: contain !important;
+	background-position: center, center !important;
+	border-radius: 0 !important;
+}
+
+@keyframes rotate {
+	to {
+		transform: scaleY(-1);
+	}
+}
+
+&:hover {
+	animation-play-state: running;
+}

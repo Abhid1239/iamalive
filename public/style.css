@@ -1,0 +1,46 @@
+body {
+	width: 100vw;
+	background: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@media (prefers-color-scheme: dark) {
+	body {
+		background: black;
+	}
+}
+
+
+#signature1 {
+	stroke-dasharray: 2690;
+	stroke-dashoffset: 2690;
+	stroke-dashoffset: 0;
+
+	animation: textAnimation 4s infinite;
+}
+
+#signature2 {
+	stroke-dasharray: 34;
+	stroke-dashoffset: 34;
+	animation: textAnimation2 4s infinite;
+}
+
+/* @keyframes textAnimation {
+	90%,
+	100% {
+		stroke-dashoffset: 0;
+		filter: blur(0px);
+	}
+}
+
+@keyframes textAnimation2 {
+	90% {
+		stroke-dashoffset: 34;
+	}
+
+	100% {
+		stroke-dashoffset: 0;
+	}
+} */
