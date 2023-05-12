@@ -211,9 +211,10 @@ background-position: center; */
 }
 
 .full-screen {
-	width: 100% !important;
-	height: 100% !important;
-	inset: 0 !important;
+	width: 200% !important;
+	height: 200% !important;
+	top: -50% !important;
+	left: -50% !important;
 	/* position: fixed !important; */
 	z-index: 100 !important;
 	/* transform: scale(1) !important; */
@@ -222,7 +223,6 @@ background-position: center; */
 	border-radius: 0 !important;
 	color: #000;
 }
-
 
 .top-left {
 	border-top-left-radius: 250px;

@@ -1,0 +1,134 @@
+:root {
+	--size: 400px;
+	--white: #ffffff;
+}
+body {
+	width: 100vw;
+	background: white;
+	display: flex;
+	justify-content: center;
+	align-items: top;
+	height: 2000px;
+	overflow-y: scroll;
+}
+
+@media (prefers-color-scheme: dark) {
+	body {
+		background: black;
+	}
+}
+
+.main-wrapper {
+	position: fixed;
+	top: 150px;
+	margin: auto;
+	display: flex;
+	justify-content: center;
+}
+
+.box {
+	perspective: 1500px;
+	width: var(--size);
+	height: var(--size);
+	position: relative;
+}
+
+.pl {
+	perspective-origin: 100%;
+}
+
+.pl .wrapper {
+	animation: clockWise 2s reverse infinite;
+}
+.pr {
+	perspective-origin: 0%;
+	/* animation: clockWise 2s reverse infinite; */
+}
+.pr .wrapper {
+	animation: clockWise 2s infinite;
+}
+
+/* @keyframes clockWise {
+	0% {
+		transform: rotateX(0deg);
+	}
+	to {
+		transform: rotateX(360deg);
+	}
+} */
+.wrapper {
+	position: relative;
+	width: inherit;
+	height: inherit;
+	transform-style: preserve-3d;
+	animation: rotate 5s infinite;
+}
+
+.child {
+	width: var(--size);
+	height: var(--size);
+	position: absolute;
+	perspective: 600px;
+	transform-style: preserve-3d;
+	font-size: 90px;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+}
+
+.box-front {
+	transform: rotate(0deg) translate3d(0, 0, calc(var(--size) / 2));
+	background-color: rgb(255, 255, 255);
+}
+.box-back {
+	transform: rotateX(-90deg) translate3d(0, 0, calc(var(--size) / 2));
+	background-color: rgb(66, 66, 66);
+	color: #ffffff;
+}
+.box-top {
+	transform: rotateX(90deg) translate3d(0, 0, calc(var(--size) / 2));
+	background-color: rgb(203, 202, 202);
+}
+.box-bottom {
+	transform: rotateX(180deg) translate3d(0, 0, calc(var(--size) / 2));
+	background-color: rgb(208, 208, 208);
+}
+
+.pr .box-front {
+	background: url(./images/as.jpeg) no-repeat center;
+	background-size: cover;
+}
+.pr .box-back {
+	background: url(./images/bs.jpeg) no-repeat center;
+	background-size: cover;
+}
+.pr .box-top {
+	background: url(./images/cs.jpeg) no-repeat center;
+	background-size: cover;
+}
+.pr .box-bottom {
+	background: url(./images/ds.jpeg) no-repeat center;
+	background-size: cover;
+}
+
+.marquee {
+	display: flex;
+	gap: 60px;
+	height: 100%;
+	align-items: center;
+}
+
+.pl .box-front .marquee {
+	transform: translate3d(200px, 0, 0);
+}
+.pl .box-back .marquee {
+	transform: translate3d(150px, 0, 0);
+}
+.pl .box-top .marquee {
+	transform: translate3d(300px, 0, 0);
+}
+.pl .box-bottom .marquee {
+	transform: translate3d(450px, 0, 0);
+}

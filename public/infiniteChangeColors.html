@@ -46,10 +46,10 @@
 
     <script>
 
-      function getNumber(start = 1, end = 4) {
-        var min = start,
-          max = end,
-          random, prevNum = 0;
+      function getNumber(prevNum = 0) {
+        var min = 1,
+          max = 3,
+          random;
         random = Math.floor(Math.random() * (max - min)) + min;
 
         while (prevNum === random) {
@@ -59,37 +59,13 @@
         return random
       };
 
-
-      let borderRadiusAttribute = [
-        "top-left", "bottom-left", "top-right", "bottom-right"];
-
       let transitionWrapper = document.querySelector(".wrapper");
       function ApplyTransition() {
         return setInterval(() => {
           transitionWrapper.dataset.type = getNumber();
-          transitionWrapper.dataset.radius = getNumber(1, 5);
-          if (transitionWrapper.dataset.type !== 1 &&
-            transitionWrapper.dataset.radius === 4) {
-            randomBorders(true)
-          }
-          else {
-            randomBorders(false)
-
-          }
+          transitionWrapper.dataset.radius = getNumber();
+          // prevNum = newNum
         }, 3000)
-      }
-
-      function randomBorders(addBorders) {
-        for (let element of hoveringEleement) {
-          if (addBorders) {
-            element.classList.add(borderRadiusAttribute[getNumber(0, 5)])
-
-          }
-          else {
-            element.classList.remove(borderRadiusAttribute)
-
-          }
-        }
       }
 
       let hoveringEleement = document.querySelectorAll(".children");

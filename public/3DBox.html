@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="CSSReset.css">
+        <link rel="stylesheet" href="3DBox.css">
+    </head>
+
+    <body>
+        <div class="main-wrapper">
+            <div class="box pl">
+                <div class="wrapper">
+                    <div class="child box-front">
+                        <div class="marquee">
+                            <p>SLEEP </p>
+                            <p> (SLEEP)</p>
+                        </div>
+                    </div>
+                    <div class="child box-back">
+                        <div class="marquee">
+                            <p> (SLEEP)</p>
+
+                            <p>SLEEP </p>
+                        </div>
+                    </div>
+                    <div class="child box-bottom">
+                        <div class="marquee">
+                            <p>SLEEP </p>
+                        </div>
+                    </div>
+
+                    <div class="child box-top">
+                        <div class="marquee">
+                            <p>SLEEP </p>
+                            <p> (SLEEP)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="box pr">
+                <div class="wrapper">
+                    <div class="child box-front"></div>
+                    <div class="child box-bottom"></div>
+                    <div class="child box-back"></div>
+                    <div class="child box-top"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        console.log("SLEEP");
+        window.onbeforeunload = function () {
+            window.scrollTo(0, 0);
+        }
+        // document.addEventListener("DOMContentLoaded", (event) => {
+        //     window.scrollTo(0, 0)
+        // });
+        document.addEventListener("scroll", () => { scrollRotate() });
+        const leftChild = document.querySelector(".pl div")
+        const rightChild = document.querySelector(".pr div")
+        const marqueeText = document.querySelectorAll(".marquee")
+        function scrollRotate() {
+            let scrollAmount = (window.pageYOffset / (document.body.clientHeight - window.innerHeight));
+            leftChild.style.transform = `rotateX(${scrollAmount * 360}deg)`;
+            rightChild.style.transform = `rotateX(${-scrollAmount * 360}deg)`;
+            let translatevalue = -1 * (600 * scrollAmount - 200);
+            let opposite = 200;
+            let count = 0;
+            for (let element of marqueeText) {
+                element.style.transform = `translate3d(${translatevalue}px, 0 ,0)`;
+                translatevalue *= -1
+                translatevalue += opposite;
+                count++;
+                // if (count == 1) {
+                //     translatevalue = -1 * (600 * scrollAmount - 200);
+                // }
+            }
+        }
+
+
+    </script>
+
+</html>
